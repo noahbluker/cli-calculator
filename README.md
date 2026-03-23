@@ -1,4 +1,4 @@
-## Nom du projet : cli-calculator
+### Nom du projet : cli-calculator
 ---
 Simple calculatrice en CLI
 
