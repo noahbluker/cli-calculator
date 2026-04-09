@@ -1,10 +1,8 @@
-### Nom du projet : cli-calculator
+### cli-calculator
 ---
-Simple calculatrice en CLI
-
 1. Cloner le projet
 ```
-git clone <url_du_projet>
+git clone <repo> <directory>
 ```
 
 2. Exécuter le projet
