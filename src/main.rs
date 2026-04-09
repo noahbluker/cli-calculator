@@ -2,9 +2,9 @@ use std::io::{self, Write};
 
 fn main()
 {
-    let number1  = read_number(" Number 1");
+    let number1 = read_number(" Number 1");
     let operator = read_operator(" Operator (+, -, *, /, %)");
-    let number2  = read_number(" Number 2");
+    let number2 = read_number(" Number 2");
 
     let result = match operator {
         '+' => number1 + number2,
@@ -12,14 +12,14 @@ fn main()
         '*' => number1 * number2,
         '/' => {
             if number2 == 0.0 {
-                println!(" ! Error : Division by 0");
+                println!(" Error: Division by 0");
                 return;
             }
             number1 / number2
         },
         '%' => {
             if number2 == 0.0 {
-                println!(" ! Error : Division by 0");
+                println!(" Error: Division by 0");
                 return;
             }
             number1 % number2
@@ -27,12 +27,12 @@ fn main()
         _ => unreachable!(),
     };
 
-    println!(" Result : {} {} {} = {}", number1, operator, number2, result);
+    println!(" Result: {} {} {} = {}", number1, operator, number2, result);
 }
 
 fn read_number(txt: &str) -> f64 {
     loop {
-        print!("{} : ", txt);
+        print!("{}: ", txt);
         io::stdout().flush().expect("Flush error");
         
         let mut input = String::new();
@@ -40,14 +40,14 @@ fn read_number(txt: &str) -> f64 {
 
         match input.trim().parse::<f64>() {
             Ok(num) => return num,
-            Err(_) => println!(" ! Enter a number"),
+            Err(_) => println!(" Enter a number"),
         }
     }
 }
 
 fn read_operator(txt: &str) -> char {
     loop {
-        print!("{} : ", txt);
+        print!("{}: ", txt);
         io::stdout().flush().expect("Flush error");
 
         let mut input = String::new();
@@ -57,7 +57,7 @@ fn read_operator(txt: &str) -> char {
 
         match input {
             "+" | "-" | "*" | "/" | "%" => return input.chars().next().unwrap(),
-            _ => println!(" ! Invalid operator : '{}'", input),
+            _ => println!(" Invalid operator: '{}'", input),
         }
     }
 }
