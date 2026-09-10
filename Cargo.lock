@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "rust-cli-calculator"
+name = "cli-calculator"
 version = "0.1.0"
