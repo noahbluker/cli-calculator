@@ -1,7 +1,7 @@
 use std::io::{self, Write};
 
 fn read_line_or_eof(txt: &str) -> Option<String> {
-  print!("{}: ", txt);
+  print!("{txt}: ");
   io::stdout().flush().expect("Flush error");
 
   let mut input = String::new();
@@ -29,7 +29,7 @@ fn read_op(txt: &str) -> Option<char> {
 
     match input {
       "+" | "-" | "*" | "/" | "%" => return input.chars().next(),
-      _ => println!(" Invalid operator: '{}'", input),
+      _ => println!(" Invalid operator: '{input}'"),
     }
   }
 }
@@ -60,5 +60,5 @@ fn main() {
     _ => unreachable!(),
   };
 
-  println!(" Result: {} {} {} = {}", num1, op, num2, result);
+  println!(" Result: {num1} {op} {num2} = {result}");
 }
